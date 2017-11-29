@@ -1,0 +1,11 @@
+.likeHeart {
+    color: #ccc;
+}
+
+.likeHeart-active {
+    color: deeppink;
+}
+
+span:hover {
+ cursor: pointer;
+}

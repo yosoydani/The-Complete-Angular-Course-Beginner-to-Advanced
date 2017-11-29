@@ -1,0 +1,7 @@
+<span class="glyphicon glyphicon-heart" 
+  [class.likeHeart]="!isLiked" 
+  [class.likeHeart-active]="isLiked"
+  (click)="onLikeChange()"
+  >
+</span>
+<span class="numberOfLikes">{{ likesCount }}</span>    

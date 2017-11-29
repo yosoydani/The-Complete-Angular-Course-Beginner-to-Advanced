@@ -1,0 +1,10 @@
+<p>
+  title-case works!
+</p>
+<h1>one way</h1>
+<input type="text" (keyup)="getSentence($event)">
+<h2 id="titleCase">Vacio</h2>
+
+<h1>two side bending And Custom Pipes</h1>
+<input type="text" [(ngModel)]="sentence"/>
+<h2>{{ sentence | titleCase}}</h2>

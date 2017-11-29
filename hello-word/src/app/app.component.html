@@ -1,0 +1,19 @@
+<h1>Angular</h1>
+<!-- <app-courses></app-courses> -->
+<!-- <app-authors></app-authors> -->
+<!-- <app-favorite-star></app-favorite-star> -->
+<!-- <app-title-case></app-title-case> -->
+<app-favorite-star [isFavorite]="post.isFavorite" (change)="onFavoriteChange($event)"></app-favorite-star>
+<bootstrap-panel>
+    <div class="heading">Heading</div>
+    <div class="body">
+        <h2>this is the body</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, velit perspiciatis. Deleniti velit aperiam rerum!
+
+        </p>
+    </div>
+</bootstrap-panel>
+<app-like
+    [likesCount]="tweet.likesCount"
+    [isLiked]="tweet.isLiked" >
+</app-like>
