@@ -1,6 +1,12 @@
 <p>
   favorite-star works!!
 </p>
-<span class="glyphicon glyphicon-star"   
+<!-- <span class="glyphicon glyphicon-star"   
 [class.glyphicon-star]="isFavorite"
-[class.glyphicon-star-empty]="!isFavorite"  (click)="toggleFavorite()">Favorite</span> <br />
+[class.glyphicon-star-empty]="!isFavorite"  (click)="toggleFavorite()">Favorite</span> <br /> -->
+
+<span class="glyphicon" [ngClass]="{
+  'glyphicon-star': isFavorite,
+  'glyphicon-star-empty' : !isFavorite
+}"   
+  (click)="toggleFavorite()">Favorite</span> <br />

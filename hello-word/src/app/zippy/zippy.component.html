@@ -1,0 +1,17 @@
+<p>
+  zippy works!
+</p>
+<div class="panel panel-default">
+  <div class="panel-heading" (click)="onClick()">
+    {{ title}}
+    <span class="glyphicon" 
+      [ngClass] = "{
+      'glyphicon-menu-down': !active,
+      'glyphicon-menu-up': active
+      }">
+    </span>
+  </div>
+  <div class="panel-body" *ngIf="active">
+    <ng-content></ng-content>
+  </div>
+</div>
