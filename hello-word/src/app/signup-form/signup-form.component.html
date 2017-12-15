@@ -1,0 +1,32 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div *ngIf="form.errors" class="alert alert-danger">
+        The username or Password is invalid
+    </div>
+    <div formGroupName="account">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input 
+                formControlName="username"
+                id="username" 
+                type="text" 
+                class="form-control">
+                <div *ngIf="username.pending">Waiting for Uniqueness...</div>
+                <div *ngIf='username.touched && username.invalid' class="alert alert-danger">
+                    <div *ngIf="username.errors.required">Username Is required</div>
+                    <div *ngIf="username.errors.minlength">the min length is {{username.errors.minlength.requiredLength}}</div>    
+                    <div *ngIf="username.errors.cannotContainSpace">No whitspace is allowed</div>    
+                    <div *ngIf="username.errors.shouldBeUnique">The username should Be Unique</div>                
+                </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input 
+                formControlName="password"
+                id="password" 
+                type="text" 
+                class="form-control">
+                <div *ngIf='password.touched && password.invalid' class="alert alert-danger">Password is required</div>                
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+</form>
