@@ -1,3 +1,27 @@
 <p>
   course works!
 </p>
+<ul>
+  <li *ngFor="let course of courses | async">
+     {{ ( course.name? course.name : course | json) }}
+     <button class="tb btn-primary" (click)="update(course)">Update</button>
+  </li>
+</ul>
+
+<h1>{{ course$ | async | json  }}</h1>
+
+<p> {{ (author$ | async | json) }}</p>
+
+<ul>
+  <li>{{ (author$ | async)?.name }}</li>
+  <li>{{ (author$ | async)?.students }}</li>
+  <li>{{ (author$ | async)?.isPremium }}</li>
+</ul>
+
+<input type="text" (keyup.enter)="add(course)" #course />
+
+<ul *ngIf="author$ | async as author">
+  <li>{{ author.name }}</li>
+  <li>{{ author.students }}</li>
+  <li>{{ author.isPremium }}</li>
+</ul>

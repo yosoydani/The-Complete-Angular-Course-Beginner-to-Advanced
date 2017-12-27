@@ -13,7 +13,7 @@ export class ChangePasswordComponent  {
     this.form = fb.group({
       oldPassword: ['', Validators.required, ChangPasswordValidadtor.oldPassIsValid],
       newPassword: ['', Validators.required],
-      confirmPassword: ['',Validators.required ]
+      confirmPassword: ['', Validators.required ]
     }, {
       validator: ChangPasswordValidadtor.confirmNewPass
     }); // formulario

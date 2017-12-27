@@ -14,7 +14,7 @@ export class GithubProfileComponent implements OnInit {
   ) { }
 
   submit() {
-    console.log('submint clicked')
+    console.log('submint clicked');
     this.router.navigate(['/followers'], {
       queryParams: { page: '1', oder: 'newest'}
     });

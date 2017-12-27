@@ -11,13 +11,13 @@ export class TitleCaseComponent implements OnInit {
   changedText: string;
   sentence;
 
-  private getSentence($event) {
+  getSentence($event) {
     this.textToChange = $event.target.value;
     this.changedText = this.toTitleCase(this.textToChange);
     document.getElementById('titleCase').innerHTML = this.changedText;
   }
 
-  private toTitleCase(str: string) {
+  toTitleCase(str: string) {
     const wordsArray: string[] = str.split(' ');
     wordsArray[0] = this.wordTotile(wordsArray[0]);
     for (let i = 1; i < wordsArray.length; i++ ) {

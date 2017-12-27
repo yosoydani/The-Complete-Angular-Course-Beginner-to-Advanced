@@ -27,9 +27,9 @@ export class SignupFormComponent {
     }) // account formGroup
   }); // root formGroup
 
-  onSubmit(){
+  onSubmit() {
     this.form.setErrors({
-      invalildateLogin:true
+      invalildateLogin: true
     });
   }
   get username() {

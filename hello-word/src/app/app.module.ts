@@ -34,6 +34,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { RouterModule } from '@angular/router';
 import { ArchiveMainComponent } from './archive-main/archive-main.component';
 import { ArchiveDetailComponent } from './archive-detail/archive-detail.component';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+import { AngularFireDatabaseModule} from 'angularfire2/database';
+import { FirebaseEjemploComponent } from './firebase-ejemplo/firebase-ejemplo.component';
+
 
 @NgModule({
   declarations: [
@@ -62,6 +67,7 @@ import { ArchiveDetailComponent } from './archive-detail/archive-detail.componen
     NotFoundComponent,
     ArchiveMainComponent,
     ArchiveDetailComponent,
+    FirebaseEjemploComponent,
   ],
   imports: [
     BrowserModule,
@@ -97,7 +103,9 @@ import { ArchiveDetailComponent } from './archive-detail/archive-detail.componen
         path: '**',
         component: NotFoundComponent
       }
-    ])
+    ]),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   providers: [
     CoursesService,
